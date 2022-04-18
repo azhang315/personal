@@ -1,6 +1,8 @@
 # personal
 Showcase of relevant projects and personal information
 
-Project Status: active
+### Project Status: 
+Active
 
-Bio: Personal website that acts as a digital portfolio
+### Bio: 
+Personal website that acts as a digital portfolio
