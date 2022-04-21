@@ -3,17 +3,38 @@ function myFunction() {
   }
 
 
-  // When the user scrolls the page, execute myFunction
+
+
 window.onscroll = function() {stickyobj()};
-// Get the navbar
+
 var navbar = document.getElementById("nav");
-// Get the offset position of the navbar
+
+var body = document.body,
+    html = document.documentElement;
+var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+
 var sticky = navbar.offsetTop;
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+var sticky2 = height - screen.height - 300;
+
 function stickyobj() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
+  navbar.classList.remove("sticky2");
+  if (window.pageYOffset >= sticky /* && window.pageYOffset <= sticky2*/) {
+    navbar.classList.add("sticky");
+  } 
+  else {
     navbar.classList.remove("sticky");
   }
+  /*
+  if (window.pageYOffset > sticky2) {
+
+    navbar.classList.add("sticky2");
+
+    var sticky_scroll = sticky2 - sticky;
+    navbar.style.top = sticky_scroll +  "px";
+  }
+  else {
+    navbar.classList.remove("sticky2");
+  }
+  */
 } 
